@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uploaded Images</title>
+</head>
+<body>
+    <h1>Uploaded Images</h1>
+    
+    <% if (images.length === 0) { %>
+        <p>No images uploaded</p>
+    <% } else { %>
+        <ul>
+            <% images.forEach(image => { %>
+                <li>
+                    <strong><%= image.name %></strong><br>
+                    <img src="<%= image.url %>" alt="Uploaded Image" width="200">
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
+
+    <br>
+    <a href="/upload">Upload New Image</a>
+</body>
+</html>
